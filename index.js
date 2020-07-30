@@ -5,8 +5,9 @@ const { join } = require("path");
 
 app.use("/assets", express.static(join(__dirname, "assets")));
 app.use("/images", express.static(join(__dirname, "images")));
-app.use((req, res) => {
-    console.log(`[${new Date().toString().split(" ", 5).join(" ")}] ${req.headers["x-real-ip"] || req.ip} (${res.header["User-Agent"] || "No User-Agent"}) Requesting to ${req.path}`)
+app.use((req, res, next) => {
+    console.log(`[${new Date().toString().split(" ", 5).join(" ")}] ${req.headers["x-real-ip"] || req.ip} (${res.header["User-Agent"] || "No User-Agent"}) Requesting to ${req.path}`);
+    return next();
 });
 app.listen(PORT, () => {
     console.log(`[${new Date().toString().split(" ", 5).join(" ")}] Listening to http://localhost:${PORT}/`);
