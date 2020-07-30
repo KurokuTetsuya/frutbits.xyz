@@ -16,3 +16,6 @@ app.listen(PORT, () => {
 app.get("/", (request, response) => {
     response.status(200).sendFile("index.html", { root: "." });
 });
+
+app.get("/discord", (request, response) => response.status(200).redirect("https://discord.gg/fD5MHy9"));
+app.get("/leaderboard", (request, response) => response.status(200).redirect("https://arcanebot.xyz/leaderboard/frutbits"));
