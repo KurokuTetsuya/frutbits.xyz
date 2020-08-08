@@ -12,8 +12,6 @@ RUN echo [INFO] ✨ Installing build deps.. \
     && yarn cache clean \
     && echo [INFO] 🔗 Installing dependencies.. \
     && yarn install \
-    && echo [INFO] ✍️ Building source.. \
-    && yarn build \
     && echo [INFO] 🗑️ Cleanning Dev dependencies.. \
     && yarn install --production \
     && apk del .build-deps
