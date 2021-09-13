@@ -10,6 +10,7 @@ app.use((req, res, next) => {
     return next();
 });
 app.listen(PORT, () => {
+    console.log("Ready to serve");
     console.log(`[${new Date().toString().split(" ", 5).join(" ")}] Listening to http://localhost:${PORT}/`);
 });
 
